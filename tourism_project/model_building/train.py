@@ -22,7 +22,7 @@ ytest  = pd.read_csv("ytest.csv").squeeze()
 
 # Extract numeric features from X so that the target variable 'ProdTaken' is not included
 # One-hot encode 'categorical_features' and scale numeric features
-numeric_features = X.select_dtypes(include=[np.number]).columns
+numeric_features = ['Age', 'CityTier', 'DurationOfPitch', 'NumberOfPersonVisiting', 'NumberOfFollowups', 'PreferredPropertyStar', 'NumberOfTrips', 'Passport', 'PitchSatisfactionScore', 'OwnCar', 'NumberOfChildrenVisiting', 'MonthlyIncome']
 print("Numeric features:", list(numeric_features))
 categorical_features = ['TypeofContact', 'Occupation', 'Gender', 'ProductPitched', 
                         'MaritalStatus', 'Designation']
