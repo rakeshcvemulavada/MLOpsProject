@@ -34,7 +34,7 @@ for col in categorical_cols:
 df.Gender = df.Gender.replace("Fe male","Female")
 df['Gender'] = df['Gender'].str.strip().replace({'Fe Male': 'Female', 'Fe male': 'Female'})
 # Merge Unmarried with Single, keep Single as category values of MaritalStatus
-df_copy["MaritalStatus"] = df_copy["MaritalStatus"].replace("Unmarried","Single")
+df["MaritalStatus"] = df["MaritalStatus"].replace("Unmarried","Single")
 
 # Encode categorical columns
 print("\nEncoding categorical variables...")
@@ -61,5 +61,5 @@ Xtrain.to_csv("Xtrain.csv", index=False)
 Xtest.to_csv("Xtest.csv", index=False)
 ytrain.to_csv("ytrain.csv", index=False)
 ytest.to_csv("ytest.csv", index=False)
-print("Type values kept as:", sorted(y["ProdTaken"].unique()))
+print("Type values kept as:", sorted(y.unique()))
 print("Data prepared: train/test splits written.")
