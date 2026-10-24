@@ -70,9 +70,3 @@ if st.button("Predict"):
         st.success("The customer is likely to purchase the package.")
     else:
         st.error("The customer is unlikely to purchase the package.")
-
-if st.button("Predict"):
-    prediction = model.predict(input_data)[0,1]
-    result = "Machine Failure" if prediction == 1 else "No Failure"
-    st.subheader("Prediction Result:")
-    st.success(f"The model predicts: **{result}**")
